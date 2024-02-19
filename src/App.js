@@ -15,6 +15,7 @@ import Home from './components/Home';
 function App() {
   return (
     <>
+    <div>
       <SocketState>
         <PeerState>
          <Router>
@@ -30,6 +31,7 @@ function App() {
         </Router>
         </PeerState>
       </SocketState>
+      </div>
     </>
   );
 }
