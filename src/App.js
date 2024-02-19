@@ -1,6 +1,6 @@
 import './App.css';
 import {
-  BrowserRouter as Router,
+  HashRouter,
   Routes,
   Route
 } from "react-router-dom";
@@ -18,7 +18,7 @@ function App() {
     <div>
       <SocketState>
         <PeerState>
-         <Router>
+         <HashRouter>
 
           <Routes>
             <Route path="/home" element={<Home/>} />
@@ -28,7 +28,7 @@ function App() {
 
           </Routes>
 
-        </Router>
+        </HashRouter>
         </PeerState>
       </SocketState>
       </div>
