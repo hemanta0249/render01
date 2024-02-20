@@ -2,6 +2,7 @@ const connectToMongo = require('./db');
 const express = require("express");
 const {Server} = require("socket.io");
 const cors = require('cors');
+// const fs = require('fs');
 
 connectToMongo();
 
@@ -58,6 +59,10 @@ app.use('/api/auth', require('./routes/auth'));
 app.listen(port,()=>{
     console.log(`running on the port ${port}`);
 })
+
+// var key = fs.readFileSync("../key").toString();
+// console.log(key);
+
 
 io.listen(8080,{
     cors : true

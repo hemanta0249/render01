@@ -8,7 +8,7 @@ export const useSocket = ()=>{
 }
 
 const SocketState = (props) => {
-    const socket = useMemo(()=> io("localhost:8080"), []);
+    const socket = io("http://localhost:8080", {secure: "true"});
   return (
     <div>
       <SocketContext.Provider value={{socket}}>
