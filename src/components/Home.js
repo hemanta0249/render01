@@ -79,7 +79,7 @@ const Home = (e) => {
 
     const handleSubmit1 = (e)=>{
         e.preventDefault();
-        console.log("submitted successfully");
+        console.log("submitted successfully ok");
         const room = room1;
         // socket.emit("join-room", {room});
         // const room1 = document.getElementById("createRoom")
