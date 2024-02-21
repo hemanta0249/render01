@@ -1,6 +1,7 @@
 import React from 'react'
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
 const Login = () => {
 
@@ -17,16 +18,32 @@ const Login = () => {
         setData({...data, [e.target.name]:e.target.value})
     }
 
+    const api = axios.create({
+        baseURL: process.env.REACT_APP_API_URL,
+        headers:{
+            "Content-Type": "application/json",
+            "Accept": "application/json"
+        }
+    })
+
+    const authLogin = (data) => api.post("/api/auth/login", data);
+
     const handleSubmit = async (e)=>{
         e.preventDefault();
-        const response = await fetch("http://localhost:8000/api/auth/login",{
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({email:data.email, password:data.password})
-        })
-        const json = await response.json();
+
+        // const response = await fetch("localhost:8000/api/auth/login",{
+        //     method: "POST",
+        //     headers: {
+        //         "Content-Type": "application/json"
+        //     },
+        //     body: JSON.stringify({email:data.email, password:data.password})
+        // })
+
+        const response = await authLogin({email:data.email, password:data.password});
+
+        const json = response.data;
+
+        console.log(json);
         
         if(json.success){
             localStorage.setItem('token', json.authToken);
