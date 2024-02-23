@@ -31,19 +31,19 @@ const Login = () => {
     const handleSubmit = async (e)=>{
         e.preventDefault();
 
-        const response = await fetch("http://localhost:8000/api/auth/login",{
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({email:data.email, password:data.password})
-        })
+        // const response = await fetch("http://localhost:8000/api/auth/login",{
+        //     method: "POST",
+        //     headers: {
+        //         "Content-Type": "application/json"
+        //     },
+        //     body: JSON.stringify({email:data.email, password:data.password})
+        // })
 
-        // const response = await authLogin({email:data.email, password:data.password});
+        const response = await authLogin({email:data.email, password:data.password});
 
-        const json = await response.json();
+        const json = response.data;
 
-        // console.log(json);
+        console.log(json);
         
         if(json.success){
             localStorage.setItem('token', json.authToken);
