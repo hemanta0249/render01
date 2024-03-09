@@ -178,6 +178,28 @@
   padding-bottom: 40px;
 }
 
+.nav {
+  height: 10%;
+  background-color: black;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+ul {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 7em;
+}
+
+li {
+  margin: 0px 30px;
+  list-style: none;
+  position: relative;
+}
+
 .edit{
   width: 70%;
   display: inline;
@@ -186,4 +208,48 @@
 
 .edit2{
   margin-left: 18px;
+}
+
+.mainImp{
+  height: 100vh;
+  background-color: black;
+}
+
+.roomStyle{
+  display: flex;
+  height: 90%;
+  /* background-color: black; */
+  justify-content: space-between;
+  width: 100%;
+}
+
+.vcroom{
+  height: 100%;
+  width: 73%;
+  background-color: yellow;
+  display: flex;
+  padding: 5em 0;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.chatBox{
+  background-color: red;
+  height: 100%;
+  width: 25%;
+}
+
+.callControl{
+  width: 254px;
+  height: 240px;
+  background-color: rgba(0, 0, 0, 0.055);
+}
+
+.callBtn{
+  width: 254px;
+  height: 40px;
+  background-color: rgba(52, 47, 47, 0.303);
+  /* padding-top: 5px; */
+  display: flex;
+  justify-content: space-around;
 }

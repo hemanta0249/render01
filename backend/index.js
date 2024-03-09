@@ -49,6 +49,12 @@ io.on("connection", (socket) =>{
         const {to, ans} = data;
         io.to(to).emit("nego-final", {from: socket.id, ans});
     })
+
+    socket.on("send",(data)=>{
+        const {message} = data;
+        console.log(message);
+        socket.broadcast.emit("incomingMsg",{message})
+    })
 })
 
 app.get('/', (req, res)=>{
